@@ -15,12 +15,12 @@ int maze[HEIGHT][WIDTH] = {
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     {1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
     {1, 0, 1, 0, 1, 0, 1, 1, 0, 1},
-    {1, 0, 1, 0, 0, 0, 0, 1, 0, 1},
-    {1, 0, 1, 1, 1, 1, 0, 1, 0, 1},
-    {1, 0, 0, 0, 0, 0, 0, 1, 0, 1},
-    {1, 1, 1, 1, 1, 1, 0, 1, 0, 1},
-    {1, 0, 0, 0, 0, 1, 0, 1, 0, 1},
-    {1, 0, 1, 1, 0, 1, 0, 0, 0, 1},
+    {1, 0, 1, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
+    {1, 0, 0, 0, 0, 1, 1, 1, 0, 1},
+    {1, 0, 1, 1, 0, 0, 1, 1, 0, 1},
+    {1, 0, 1, 1, 1, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 1, 1, 1, 0, 1},
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 };
 
@@ -79,10 +79,29 @@ void findExit() {
 }
 
 int main() {
+
+    std::string maze = 
+        "|--------|\n"
+        "|A   -   |\n"
+        "|x--- -- |\n"
+        "|x---    |\n"
+        "|x---- --|\n"
+        "|x x x---|\n"
+        "| ---x-- |\n"
+        "| ---xxxx|\n"
+        "|    ---B|\n"
+        "|--------|\n";
+
+    std::cout << maze;
+
+
     auto start = std::chrono::high_resolution_clock::now();
     findExit();
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
     std::cout << "Serial execution time: " << elapsed.count() << " seconds\n";
+
+    std::cout << maze;
+
     return 0;
 }

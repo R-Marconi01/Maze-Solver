@@ -15,12 +15,12 @@ int maze[HEIGHT][WIDTH] = {
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     {1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
     {1, 0, 1, 0, 1, 0, 1, 1, 0, 1},
-    {1, 0, 1, 0, 0, 0, 0, 1, 0, 1},
-    {1, 0, 1, 1, 1, 1, 0, 1, 0, 1},
-    {1, 0, 0, 0, 0, 0, 0, 1, 0, 1},
-    {1, 1, 1, 1, 1, 1, 0, 1, 0, 1},
-    {1, 0, 0, 0, 0, 1, 0, 1, 0, 1},
-    {1, 0, 1, 1, 0, 1, 0, 0, 0, 1},
+    {1, 0, 1, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
+    {1, 0, 0, 0, 0, 1, 1, 1, 0, 1},
+    {1, 0, 1, 1, 0, 0, 1, 1, 0, 1},
+    {1, 0, 1, 1, 1, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 1, 1, 1, 0, 1},
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 };
 
@@ -85,7 +85,7 @@ void findExitParallel(int numParticles) {
 }
 
 int main() {
-    std::vector<int> particleCounts = {1, 10, 100, 500, 1000}; // Different number of particles for testing
+    std::vector<int> particleCounts = {1, 10, 50, 100}; // Different number of particles for testing
     for (int numParticles : particleCounts) {
         auto start = std::chrono::high_resolution_clock::now();
         findExitParallel(numParticles);
